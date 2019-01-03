@@ -28,3 +28,8 @@ gulp.task('sass', function() {
 });
 
 gulp.task('default', ['sass', 'serve']);
+
+/* note: 
+Command to run if you don't have admin access, e.g. lab builds, is 
+npm run gulp
+*/
