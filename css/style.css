@@ -22,7 +22,6 @@ h1 {
 	transition: opacity .3s ease; }
 
 #largeImg {
-	transform: translateX(0);
 	transition: translateX() ease 0.3s; }
 
 .slideLeft {
@@ -30,6 +29,18 @@ h1 {
 
 .slideRight {
 	transform: translateX(100vw); }
+
+.slideCenter {
+	transform: translateX(0vw); }
+
+.animateRight {
+	animation: slideRight 1s; }
+
+@keyframes slideRight {
+	0% {
+		transform: translateX(-100vw); }
+	100% {
+		transform: translateX(0vw); } }
 
 #lightbox img {
 	max-width: 100%;
@@ -44,7 +55,8 @@ h1 {
 	position: absolute;
 	cursor: pointer;
 	color: #fff;
-	padding: .5rem; }
+	padding: .5rem;
+	z-index: 1; }
 
 .close {
 	right: 0;

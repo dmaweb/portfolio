@@ -2,26 +2,34 @@
 $(document).ready(function() {
 	
 	/* lightbox */
-	/* build array of large images */
+	/* create an initial array of large images */
 var numImages = 16; // change to total number of images in your portfolio
-var slides = [];
+var slides = []; // create the slides array
+/* populate the array with image paths */
 for (var i = 1; i <= numImages; i++) {
 	slides.push("img/large/pic" + i + ".jpg");
 }
-var cur = 1;
 
-function openSlideshow() {
-var curSlide = $(this).attr("src");
-var slideNum = curSlide.match(/\d+/);
-var cur = parseInt(slideNum);
-var imgsrc = $(this).attr("src").replace('_thumb', '');
-var filename = imgsrc.replace(/^.*[\\\/]/, '');
-$('#largeImg').html('<img src="img/large/' + filename + '">')
-$('body, #lightbox').addClass('single_view');
+
+var cur = 0;
+console.log(cur);
+
+function openSlideshow() { // run th
+  var curSlide = $(this).attr("src");
+  var slideNum = curSlide.match(/\d+/);
+
+  var prevpix = parseInt(slideNum) - 1;
+  var cur = parseInt(slideNum);
+  var nextpic = parseInt(slideNum) + 1;
+  var imgsrc = curSlide.replace('_thumb', '');
+  var filename = imgsrc.replace(/^.*[\\\/]/, '');
+  
+  $('body, #lightbox').addClass('single_view');
+  $('#largeImg').html('<img src="img/large/' + filename + '">')
 }
 
 function closeSlideshow() {
-$('body, #lightbox').removeClass('single_view');
+  $('body, #lightbox').removeClass('single_view');
 }
 
 function prevPic(){
@@ -50,7 +58,7 @@ function nextPic(){
    var curSlide = slides[cur];
    console.log(curSlide);
 $("#largeImg img").attr("src", curSlide);
-$("#largeImg img").addClass('slideLeft');
+// $("#largeImg img").addClass('slideLeft');
 }
 
 
