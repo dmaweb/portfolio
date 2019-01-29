@@ -1,5 +1,11 @@
+  var fs = require('fs');
+  var files = fs.readdirSync('img/large');
+  print_r(files);
+
 
 $(document).ready(function() {
+
+
 	
 	/* lightbox */
 	/* create an initial array of large images */
