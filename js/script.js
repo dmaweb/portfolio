@@ -8,7 +8,7 @@ var numImages = 16; // change to total number of images in your portfolio
 var slides = []; // create the slides array
 /* populate the array with image paths */
 for (var i = 1; i <= numImages; i++) {
-	slides.push("img/large/pic" + i + ".jpg");
+	slides.push("images/large/pic" + i + ".jpg");
 }
 
 
@@ -26,7 +26,7 @@ function openSlideshow() { // run th
   var filename = imgsrc.replace(/^.*[\\\/]/, '');
   
   $('body, #lightbox').addClass('single_view');
-  $('#largeImg').html('<img src="img/large/' + filename + '">')
+  $('#largeImg').html('<img src="images/large/' + filename + '">')
 }
 
 function closeSlideshow() {
@@ -189,7 +189,7 @@ $("document").ready(function() {
 	var lazyloadImages;    
 
 	if ("IntersectionObserver" in window) {
-		lazyloadImages = document.querySelectorAll(".lazy");
+		lazyloadImages = document.querySelectorAll("#gallery img");
 		var imageObserver = new IntersectionObserver(function(entries, observer) {
 			console.log(observer);
 			entries.forEach(function(entry) {
