@@ -22,6 +22,7 @@ h1 {
 	transition: opacity .3s ease; }
 
 #largeImg {
+	height: 100%;
 	transition: translateX() ease 0.3s; }
 
 .slideLeft {
